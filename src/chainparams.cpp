@@ -168,7 +168,7 @@ public:
         nDefaultPort = 18432;
         strDataDir = "regtest";
         //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x7f84c3ff0d9c579380a6c8d9c9e4acd4425a3ade4a7df65d97138a89bc541361"));
+        assert(hashGenesisBlock == uint256("0x8fe0c415967c7f736ee4bd65e44604d0035461570cd33078b2445b62d3ce2b0d"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
