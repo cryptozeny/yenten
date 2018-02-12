@@ -80,8 +80,8 @@ public:
             printf("genesis.nNonce %d\n", genesis.nNonce);
         }
 #endif
-        assert(hashGenesisBlock == uint256("0x"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
-        assert(genesis.hashMerkleRoot == uint256("0x"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
+        assert(hashGenesisBlock == uint256("0x0"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
+        assert(genesis.hashMerkleRoot == uint256("0x0"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
         
         
        // printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
