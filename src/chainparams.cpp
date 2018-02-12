@@ -150,7 +150,7 @@ public:
         genesis.nTime = 1507032223;
         genesis.nNonce = 238202;
         hashGenesisBlock = genesis.GetHash();
-        //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 #if 0
         {
             printf("(test)calc new genesis block\n");
@@ -206,7 +206,7 @@ public:
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
         nDefaultPort = 18432;
         strDataDir = "regtest";
-        //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
         assert(hashGenesisBlock == uint256("0x8fe0c415967c7f736ee4bd65e44604d0035461570cd33078b2445b62d3ce2b0d"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
