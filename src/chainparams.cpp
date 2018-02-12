@@ -81,8 +81,8 @@ public:
             printf("genesis.nNonce %d\n", genesis.nNonce);
         }
 #endif
-        assert(hashGenesisBlock == uint256("0x0"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
-        assert(genesis.hashMerkleRoot == uint256("0x0"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
+        assert(hashGenesisBlock == uint256("0x9e7839a911f84e6485539ee6512f6ebaa376d0cad366aac4eccc794c2150b435"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
+        assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
         
         
      
