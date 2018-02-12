@@ -47,7 +47,7 @@ public:
         //     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
         //     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
         //   vMerkleTree: 4a5e1e
-        const char* pszTimestamp = "Bad news this season as flu cases near 2009 highs";
+        const char* pszTimestamp = "V2hvIGlzIHRoaXMgS2luZyBvZiBHbG9yeT8gQ2hpbmVzZSBTY2hvbGFyIFNheXMgRmlnaHQgVGhlIFN0YXRlIE9uIFJlbGlnaW9u";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -59,14 +59,34 @@ public:
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         printf("genesis.BuildMerkleTree = %s\n", genesis.BuildMerkleTree().ToString().c_str());
         genesis.nVersion = 1;
-        genesis.nTime    = 1507032424;
+        genesis.nTime    = 1518401710;
         genesis.nBits    = 0x1e3fffff;
-        genesis.nNonce   = 168808;
+        genesis.nNonce   = 0;
 
         hashGenesisBlock = genesis.GetHash();
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x9b56d25ff3fdeb76f6a86922a74da2f8ba9b821d3fac485fac23b4317701f9b5"));
-        assert(genesis.hashMerkleRoot == uint256("0x58348f6f36b9a4a4bc212e226b3b7f9ac4646fef01265aad4583c08adca8c3b6"));
+#if 0
+        {
+            printf("calc new genesis block\n");
+            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            printf("genesis.nBits 0x%x\n", genesis.nBits);
+
+            for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                hashGenesisBlock = genesis.GetHash();
+                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            }
+
+            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            printf("genesis.nNonce %d\n", genesis.nNonce);
+        }
+#endif
+        assert(hashGenesisBlock == uint256("0x"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
+        assert(genesis.hashMerkleRoot == uint256("0x"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
+        
+        
+       // printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+       // assert(hashGenesisBlock == uint256("0x9b56d25ff3fdeb76f6a86922a74da2f8ba9b821d3fac485fac23b4317701f9b5"));
+        //assert(genesis.hashMerkleRoot == uint256("0x58348f6f36b9a4a4bc212e226b3b7f9ac4646fef01265aad4583c08adca8c3b6"));
 
 //        vFixedSeeds.clear();
         vSeeds.clear();
@@ -129,7 +149,25 @@ public:
         genesis.nTime = 1507032223;
         genesis.nNonce = 238202;
         hashGenesisBlock = genesis.GetHash();
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+#if 0
+        {
+            printf("(test)calc new genesis block\n");
+            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            printf("genesis.nBits 0x%x\n", genesis.nBits);
+
+            for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                hashGenesisBlock = genesis.GetHash();
+                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            }
+
+            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            printf("genesis.nNonce %d\n", genesis.nNonce);
+
+        }
+#endif
+        assert(hashGenesisBlock == uint256("0x00003a0c79f595bddb7f37a22eb63fd23c541ab6a7dd7efd0215e7029bde225c"));
         assert(hashGenesisBlock == uint256("0x07bda78794cfcdca03b9ab7d93e41ae59a07bc32f4232db87dc1dafe31ebce3a"));
 
         vFixedSeeds.clear();
