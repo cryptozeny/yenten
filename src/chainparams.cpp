@@ -168,8 +168,8 @@ public:
 
         }
 #endif
-        assert(hashGenesisBlock == uint256("0x00003a0c79f595bddb7f37a22eb63fd23c541ab6a7dd7efd0215e7029bde225c"));
-        assert(hashGenesisBlock == uint256("0x07bda78794cfcdca03b9ab7d93e41ae59a07bc32f4232db87dc1dafe31ebce3a"));
+        assert(hashGenesisBlock == uint256("0xfc724df66c7621399e0d4b948c4a57416234adfb0f13b427038371df17c5183a"));
+        //assert(hashGenesisBlock == uint256("0x07bda78794cfcdca03b9ab7d93e41ae59a07bc32f4232db87dc1dafe31ebce3a"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
