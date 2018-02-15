@@ -63,7 +63,7 @@ public:
         genesis.nBits    = 0x1e3fffff;
         genesis.nNonce   = 687472;
         
-        //uncomment the following block if you want to create a genesis block by running ./yentend.  Make sure to create a new psztimestamp and set your nonce to 0 before compiling!
+        //uncomment the following block of code if you want to create a genesis block by running ./yentend.  Make sure to create a new psztimestamp and set your nonce to 0 before compiling, also comment out the assert lines below this block!
             //printf("calc new genesis block\n");
             //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
             //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
@@ -77,13 +77,9 @@ public:
             //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
             //printf("genesis.nNonce %d\n", genesis.nNonce);
             
-        assert(hashGenesisBlock == uint256("0x00003a6d75393931a995ebdec7295ede5950968f3667e4ca9096edd1df4fd600"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
-        assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
-        
-        
-     
-       // assert(hashGenesisBlock == uint256("0x9b56d25ff3fdeb76f6a86922a74da2f8ba9b821d3fac485fac23b4317701f9b5"));
-        //assert(genesis.hashMerkleRoot == uint256("0x58348f6f36b9a4a4bc212e226b3b7f9ac4646fef01265aad4583c08adca8c3b6"));
+        assert(hashGenesisBlock == uint256("0x00003a6d75393931a995ebdec7295ede5950968f3667e4ca9096edd1df4fd600"));  //comment out this line for genesis block creation
+        assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //comment out this line for genesis block creation
+       
 
 //        vFixedSeeds.clear();
         vSeeds.clear();
