@@ -76,7 +76,7 @@ public:
 
             printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
             printf("genesis.nNonce %d\n", genesis.nNonce);
-            printf("genesis.nTime %s\n", genesis.nTime);
+            printf("genesis.nTime %d\n", genesis.nTime);
             
         //assert(hashGenesisBlock == uint256("0x00003a6d75393931a995ebdec7295ede5950968f3667e4ca9096edd1df4fd600"));  //comment out this line for genesis block creation
         //assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //comment out this line for genesis block creation
