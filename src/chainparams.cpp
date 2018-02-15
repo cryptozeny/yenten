@@ -63,8 +63,8 @@ public:
         genesis.nBits    = 0x1e3fffff;
         genesis.nNonce   = 0;
 
-        hashGenesisBlock = genesis.GetHash();
-          printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+       // hashGenesisBlock = genesis.GetHash();
+         // printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 //#if 0
         //{
             printf("calc new genesis block\n");
