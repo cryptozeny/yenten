@@ -61,29 +61,24 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1518401710;
         genesis.nBits    = 0x1e3fffff;
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 687472;
+        
+        //uncomment the following block if you want to create a genesis block by running ./yentend.  Make sure to create a new psztimestamp and set your nonce to 0 before compiling!
+            //printf("calc new genesis block\n");
+            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            //printf("genesis.nBits 0x%x\n", genesis.nBits);
 
-       // hashGenesisBlock = genesis.GetHash();
-         // printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-//#if 0
-        //{
-            printf("calc new genesis block\n");
-            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
-            printf("genesis.nBits 0x%x\n", genesis.nBits);
+            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                //hashGenesisBlock = genesis.GetHash();
+                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            //}
 
-            for (genesis.nNonce = 0; ; genesis.nNonce++) {
-                hashGenesisBlock = genesis.GetHash();
-                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
-            }
-
-            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-            printf("genesis.nNonce %d\n", genesis.nNonce);
+            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            //printf("genesis.nNonce %d\n", genesis.nNonce);
             
-        //}
-//#endif
-        //assert(hashGenesisBlock == uint256("0x9e7839a911f84e6485539ee6512f6ebaa376d0cad366aac4eccc794c2150b435"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
-        //assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
+        assert(hashGenesisBlock == uint256("0x00003a6d75393931a995ebdec7295ede5950968f3667e4ca9096edd1df4fd600"));  //assert(hashGenesisBlock == uint256("0x")); for generating genesis block
+        assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //assert(genesis.hashMerkleRoot == uint256("0x")); for generating genesis block
         
         
      
