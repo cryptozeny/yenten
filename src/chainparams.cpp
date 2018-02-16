@@ -57,29 +57,29 @@ public:
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
-        printf("genesis.BuildMerkleTree = %s\n", genesis.BuildMerkleTree().ToString().c_str());
+        //printf("genesis.BuildMerkleTree = %s\n", genesis.BuildMerkleTree().ToString().c_str());//not needed since other printf's later
         genesis.nVersion = 1;
         genesis.nTime    = 1518702428;
         genesis.nBits    = 0x1e3fffff;
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 102570;
         
         //uncomment the following block of code if you want to create a genesis block by running ./yentend.  Make sure to create a new psztimestamp and set your nonce to 0 before compiling, also comment out the assert lines below this block!
-            printf("calc new genesis block\n");
-            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
-            printf("genesis.nBits 0x%x\n", genesis.nBits);
+            //printf("calc new genesis block\n");
+            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            //printf("genesis.nBits 0x%x\n", genesis.nBits);
 
-            for (genesis.nNonce = 0; ; genesis.nNonce++) {
-                hashGenesisBlock = genesis.GetHash();
-                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
-            }
+            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                //hashGenesisBlock = genesis.GetHash();
+                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            //}
 
-            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-            printf("genesis.nNonce %d\n", genesis.nNonce);
-            printf("genesis.nTime %d\n", genesis.nTime);
-            
-        //assert(hashGenesisBlock == uint256("0x00003a6d75393931a995ebdec7295ede5950968f3667e4ca9096edd1df4fd600"));  //comment out this line for genesis block creation
-        //assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //comment out this line for genesis block creation
+            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+           // printf("genesis.nNonce %d\n", genesis.nNonce);
+            //printf("genesis.nTime %d\n", genesis.nTime);
+        hashGenesisBlock = genesis.GetHash();//comment out for genesis block
+        assert(hashGenesisBlock == uint256("0x000029aa582ef049069c65331d2f2d0c42b5822a65a653daa6e2a10bc7fff9be"));  //comment out this line for genesis block creation
+        assert(genesis.hashMerkleRoot == uint256("0x41a5cf0c21a365d33fe36e25fa2548b9d0d69f1036daab738fcccf51c3447d88"));  //comment out this line for genesis block creation
        
 
 //        vFixedSeeds.clear();
@@ -143,26 +143,26 @@ public:
         genesis.nTime = 1507032223;
         genesis.nNonce = 238202;
         hashGenesisBlock = genesis.GetHash();
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-#if 0
-        {
-            printf("(test)calc new genesis block\n");
-            printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
-            printf("genesis.nBits 0x%x\n", genesis.nBits);
+        //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());//uncomment for genesis block creation
 
-            for (genesis.nNonce = 0; ; genesis.nNonce++) {
-                hashGenesisBlock = genesis.GetHash();
-                if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
-            }
+        //{
+            //printf("(test)calc new genesis block\n");
+            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            //printf("genesis.nBits 0x%x\n", genesis.nBits);
 
-            printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-            printf("genesis.nNonce %d\n", genesis.nNonce);
+            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                //hashGenesisBlock = genesis.GetHash();
+                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            //}
 
-        }
-#endif
+            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            //printf("genesis.nNonce %d\n", genesis.nNonce);
+
+        //}
+
         assert(hashGenesisBlock == uint256("0xfc724df66c7621399e0d4b948c4a57416234adfb0f13b427038371df17c5183a"));
-        //assert(hashGenesisBlock == uint256("0x07bda78794cfcdca03b9ab7d93e41ae59a07bc32f4232db87dc1dafe31ebce3a"));
+        
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -196,10 +196,29 @@ public:
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 1;
         hashGenesisBlock = genesis.GetHash();
-        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
         nDefaultPort = 18432;
         strDataDir = "regtest";
-        printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        
+         //printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());//uncomment for genesis block creation
+
+        //{
+            //printf("(test)calc new genesis block\n");
+            //printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            //printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
+            //printf("genesis.nBits 0x%x\n", genesis.nBits);
+
+            //for (genesis.nNonce = 0; ; genesis.nNonce++) {
+                //hashGenesisBlock = genesis.GetHash();
+                //if (hashGenesisBlock <= bnProofOfWorkLimit.getuint256()) break;
+            //}
+
+            //printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+            //printf("genesis.nNonce %d\n", genesis.nNonce);
+
+        //}
+        
         assert(hashGenesisBlock == uint256("0xbfd0ff5456c3024e2a6a19fe9987849951be2e69d557d8f2f681a6c1cb4251f2"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
